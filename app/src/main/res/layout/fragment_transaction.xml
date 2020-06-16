@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:fitsSystemWindows="true"
+            android:focusableInTouchMode="true"
+            android:paddingBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvAmountDue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_chainStyle="spread_inside">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:descendantFocusability="blocksDescendants"
+                app:layout_constraintBottom_toTopOf="@+id/btnYouGave"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintVertical_chainStyle="spread_inside">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/ivPersonImage"
+                    android:layout_width="102dp"
+                    android:layout_height="102dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/ic_panda"
+                    android:transitionName="imageTransition"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewTrnsaction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivPersonImage"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/tvBalanceDue"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="sans-serif-black"
+            android:paddingStart="16dp"
+            android:paddingEnd="0dp"
+            android:textColor="@android:color/black"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAmountDue"
+            app:layout_constraintEnd_toStartOf="@+id/tvAmountDue"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvAmountDue"
+            tools:text="Balance Due" />
+
+        <TextView
+            android:id="@+id/tvAmountDue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="sans-serif-black"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:gravity="end"
+            android:textColor="@android:color/black"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toTopOf="@+id/btnYouGave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvBalanceDue"
+            app:layout_constraintTop_toBottomOf="@+id/nestedScrollView"
+            tools:text="500" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/footerConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnCall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:backgroundTint="@color/colorPrimary"
+                app:fabSize="mini"
+                android:layout_margin="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_call_black_24dp"
+                app:tint="@android:color/white" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:backgroundTint="@color/colorPrimary"
+                app:fabSize="mini"
+                android:layout_margin="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_message_black_24dp"
+                app:tint="@android:color/white" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnYouGave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/background_transaction_buttons"
+            android:elevation="8dp"
+            android:text="@string/you_gave"
+            android:textColor="@android:color/white"
+            android:translationY="-12dp"
+            android:translationZ="16dp"
+            app:backgroundTint="@android:color/holo_red_dark"
+            app:icon="@drawable/ic_arrow_upward_black_24dp"
+            app:iconGravity="textStart"
+            app:iconPadding="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnYouGot"
+            app:layout_constraintTop_toBottomOf="@+id/tvAmountDue"
+            app:layout_constraintVertical_bias="1.0"
+            app:rippleColor="@android:color/holo_orange_dark" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnYouGot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/background_transaction_buttons"
+            android:elevation="8dp"
+            android:text="@string/you_got"
+            android:translationY="-12dp"
+            app:icon="@drawable/ic_arrow_downward_white_24dp"
+            app:iconGravity="textEnd"
+            app:iconPadding="0dp"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnYouGave"
+            app:layout_constraintTop_toBottomOf="@id/tvAmountDue"
+            app:layout_constraintVertical_bias="1.0"
+            app:rippleColor="@android:color/holo_blue_dark" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tvDateGrouped"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="21 May, 2020"
+        android:textSize="16sp"
+        android:fontFamily="sans-serif-medium"
+        android:background="@drawable/background_date_grouped"
+        android:textColor="@android:color/white"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:layout_marginTop="8dp"
+        android:elevation="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintViewGreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:elevation="8dp"
+        android:background="@drawable/rounded_corners"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDateGrouped" >
+
+        <TextView
+            android:id="@+id/tvAmountGreen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tvTimeGreen"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Rs.300" />
+
+        <TextView
+            android:id="@+id/tvTimeGreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="12:30 PM"
+            android:textSize="12sp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center|end"
+            android:paddingEnd="0dp"
+            android:paddingStart="32dp"
+            android:textColor="@android:color/black"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvDateGreen"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAmountGreen"/>
+
+        <TextView
+            android:id="@+id/tvDateGreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="21 May, 2020"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/tvAmountGreen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvTimeGreen"/>
+
+        <TextView
+            android:id="@+id/tvNotesGreen"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Notes"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDateGreen"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintViewRed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/rounded_corners"
+        android:elevation="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDateGrouped" >
+
+        <TextView
+            android:id="@+id/tvAmountRed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="22sp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tvTimeRed"
+            app:layout_constraintStart_toStartOf="@+id/tvDateRed"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Rs.300" />
+
+        <TextView
+            android:id="@+id/tvTimeRed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="12:30 PM"
+            android:textSize="12sp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center|end"
+            android:paddingEnd="0dp"
+            android:paddingStart="32dp"
+            android:textColor="@android:color/black"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvDateRed"
+            app:layout_constraintTop_toBottomOf="@+id/tvAmountRed"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvDateRed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="21 May, 2020"
+            android:textColor="@android:color/black"
+            app:layout_constraintVertical_bias="0.0"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/tvAmountRed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvTimeRed"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvNotesRed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="Notes"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDateRed"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

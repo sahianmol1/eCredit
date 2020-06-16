@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_person_black_24dp"
+            android:title="@string/customers" />
+
+
+        <item
+            android:id="@+id/nav_all_transactions"
+            android:icon="@drawable/ic_payment_black_24dp"
+            android:title="@string/all_transactions" />
+
+        <item
+            android:id="@+id/nav_export"
+            android:icon="@drawable/ic_share"
+            android:title="@string/export_data_into_csv_file" />
+
+    </group>
+
+    <item android:title="@string/communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/menu_share" />
+
+        </menu>
+    </item>
+
+</menu>

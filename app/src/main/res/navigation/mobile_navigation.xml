@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.projects.android.eCredit.fragment.HomeFragment"
+        android:label="@string/customers"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_addCustomerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:destination="@id/addCustomerFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_transactionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:destination="@id/transactionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addCustomerFragment"
+        android:name="com.projects.android.eCredit.fragment.AddCustomerFragment"
+        android:label="@string/add_new_customer"
+        tools:layout="@layout/fragment_add_customer">
+        <action
+            android:id="@+id/action_addCustomerFragment_to_nav_home"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:destination="@id/nav_home"
+            app:popUpTo="@id/nav_home"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="com.projects.android.eCredit.fragment.TransactionFragment"
+        android:label="TransactionFragment" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="phoneNumber"
+            app:argType="string" />
+        <argument
+            android:name="image"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_transactionFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_export"
+        android:name="com.projects.android.eCredit.fragment.ExportCSVFragment"
+        android:label="Export/Backup"
+        tools:layout="@layout/fragment_export_csv" />
+    <fragment
+        android:id="@+id/nav_all_transactions"
+        android:name="com.projects.android.eCredit.fragment.AllTransactionsFragment"
+        android:label="All Transactions"
+        tools:layout="@layout/fragment_all_transactions" />
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.projects.android.eCredit.fragment.ShareFragment"
+        android:label="Share"
+        tools:layout="@layout/fragment_share" />
+</navigation>
